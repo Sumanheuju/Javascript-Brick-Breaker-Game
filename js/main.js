@@ -8,14 +8,14 @@ var ballRadius =10;
 var dx = 2;
 var dy = -2;
 var batHeight = 10;
-var batWidth = 75;
+var batWidth = 85;
 var batX = (canvas.width - batWidth)/2;
 var rightPressed = false;
 var leftPressed = false;
-var brickRowCount = 5;
-var brickColumnCount = 9;
-var brickWidth = 75;
-var brickHeight = 20;
+var brickRowCount = 6;
+var brickColumnCount = 12;
+var brickWidth = 85;
+var brickHeight = 30;
 var brickPadding = 10;
 var brickOffsetTop = 30;
 var brickOffsetLeft = 30;
@@ -78,7 +78,7 @@ function keyUpHandler(e){
 function drawBall(){
     rick.beginPath();
     rick.arc(x , y , ballRadius , 0 , Math.PI*2);
-    rick.fillStyle = "red";
+    rick.fillStyle = "#e0ab4a";
     rick.fill();
     rick.closePath();
 }
@@ -86,7 +86,7 @@ function drawBall(){
 function drawBat(){
     rick.beginPath();
     rick.rect(batX,canvas.height - batHeight,batWidth, batHeight);
-    rick.fillStyle = "green";
+    rick.fillStyle = "#3a4746";
     rick.fill();
     rick.closePath();
 }
@@ -101,8 +101,9 @@ function drawBricks() {
                 bricks[c][r].y = brickY;
                 rick.beginPath();
                 rick.rect(brickX, brickY, brickWidth, brickHeight);
-                rick.fillStyle = "#0095DD";
+                rick.fillStyle = "#ffd88c";
                 rick.fill();
+
                 rick.closePath();
             }
         }
@@ -110,8 +111,8 @@ function drawBricks() {
 }
 
 function drawScore(){
-    rick.font= "16px Arial";
-    rick.fillStyle = "#0095DD";
+    rick.font= "20px Arial";
+    rick.fillStyle = "#f9f9f9";
     rick.fillText("Score: "+score, 8, 20);
 
 }
